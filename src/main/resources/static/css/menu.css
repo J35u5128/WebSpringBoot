@@ -1,0 +1,29 @@
+.platform-menu {
+    text-align: center;
+    margin: 25px auto;
+    padding: 10px 0;
+    background-color: #2c3e50;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1400px;
+}
+
+.platform-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: color 0.2s;
+}
+
+.platform-link:visited {
+    color: white;
+}
+
+.platform-link:hover {
+    color: #1abc9c;
+}
+
+.platform-link + .platform-link {
+    border-left: 1px solid #7f8c8d;
+}

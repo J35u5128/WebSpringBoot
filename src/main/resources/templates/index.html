@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi primera web con SpringBoot</title>
+    <link rel="stylesheet" th:href="@{/css/style-index.css}">
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+</head>
+<body>
+<header>
+    <h1>VIDEOJUEGOS</h1>
+    <hr>
+    <nav class="platform-menu">
+        <a th:href="@{/}" class="platform-link">Todas</a>
+        <a th:each="p : ${platforms}"
+           th:href="@{/(platform=${p})}"
+           th:text="${p}"
+           class="platform-link">
+        </a>
+    </nav>
+</header>
+<main>
+    <div class="game-grid">
+        <div th:each="game : ${games}" class="game-card">
+            <a th:href="@{'/juego/'+${game.id}}">
+                <img th:src="@{https://picsum.photos/seed/{id}/300/200(id=${game.id})}" alt="Game Image">
+                <div class="game-title-overlay">
+                    <span th:text="${game.title}">Título juego</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${game.title}">Detalles del Juego</title>
+    <link rel="stylesheet" th:href="@{/css/style-juego.css}">
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+</head>
+<body>
+<header>
+    <h1>VIDEOJUEGOS</h1>
+    <hr>
+    <nav class="platform-menu">
+        <a th:href="@{/}" class="platform-link">Todas</a>
+        <a th:each="p : ${platforms}"
+           th:href="@{/(platform=${p})}"
+           th:text="${p}"
+           class="platform-link">
+        </a>
+    </nav>
+    <a th:href="@{/}" class="back-button">&larr; Volver a la lista</a>
+</header>
+<main class="game-details-container">
+    <div class="game-image">
+        <img th:src="@{https://picsum.photos/600/400(id=${game.id})}" th:alt="${game.title}">
+    </div>
+    <div class="game-info">
+        <h1 th:text="${game.title}">Título del Juego</h1>
+        <hr>
+        <ul>
+            <li><strong>Plataforma:</strong> <span th:text="${game.platform}"></span></li>
+            <li><strong>Año:</strong> <span th:text="${game.year}"></span></li>
+            <li><strong>Descripcion:</strong> <span th:text="${game.description}"></span></li>
+        </ul>
+    </div>
+</main>
+</body>
+</html>
