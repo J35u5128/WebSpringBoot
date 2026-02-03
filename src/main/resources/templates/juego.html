@@ -5,6 +5,7 @@
     <title th:text="${game.title}">Detalles del Juego</title>
     <link rel="stylesheet" th:href="@{/css/style-juego.css}">
     <link rel="stylesheet" th:href="@{/css/menu.css}">
+    <link rel="stylesheet" th:href="@{/css/style-buttons.css}">
 </head>
 <body>
 <header>
@@ -19,6 +20,7 @@
         </a>
     </nav>
     <a th:href="@{/}" class="back-button">&larr; Volver a la lista</a>
+    <a th:href="@{'/juego/editar/' + ${game.id}}" class="btn-secondary">Editar</a>
 </header>
 <main class="game-details-container">
     <div class="game-image">
